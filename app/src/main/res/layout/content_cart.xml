@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".CartActivity"
+    android:fitsSystemWindows="true"
+    tools:showIn="@layout/activity_cart">
+    <ScrollView
+        android:layout_marginBottom="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/content_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context="com.urembo.origicheck.urembo.CartActivity"
+            tools:showIn="@layout/activity_cart">
+
+            <androidx.recyclerview.widget.RecyclerView
+
+
+                android:id="@+id/listReports"
+                android:elevation="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="Total:"
+                        android:textSize="30sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="Cart is Empty"
+                        android:textSize="30sp"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:background="@android:color/white"
+                        android:textStyle="bold"
+
+                        android:textColor="@android:color/white"
+                        android:text="ShopName"
+
+                        android:id="@+id/ShopName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:background="@android:color/white"
+                        android:textStyle="bold"
+
+                        android:text="ShopMail"
+
+                        android:id="@+id/ShopMail"
+                        android:textColor="@android:color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:background="@android:color/white"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:text="Address"
+
+                        android:id="@+id/Address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:background="@android:color/white"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:text="Location"
+
+                        android:id="@+id/Location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:background="@android:color/white"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:text="Paybill"
+
+                        android:id="@+id/Paybill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:background="@android:color/white"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:text="Telephone"
+
+                        android:id="@+id/Telephone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:layout_marginTop="5dp"
+                android:padding="@dimen/space10"
+                android:id="@+id/proceed_checkout"
+                android:text="Proceed to CheckOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:padding="@dimen/space10"
+
+                android:id="@+id/keep_shopping"
+                android:text="Keep Shopping"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

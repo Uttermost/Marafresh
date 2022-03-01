@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.app.marafresh">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MaraFresh">
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.MaraFresh.NoActionBar" />
+        <activity
+            android:name=".SelectedCategory"
+            android:exported="false"
+            android:label="@string/title_activity_selected_category"
+            android:theme="@style/Theme.MaraFresh.NoActionBar" />
+        <activity
+            android:name=".Category"
+            android:exported="false"
+            android:label="@string/title_activity_category"
+            android:theme="@style/Theme.MaraFresh.NoActionBar" />
+        <activity
+            android:name=".OrdersActivity"
+            android:exported="false"
+            android:label="@string/title_activity_orders"
+            android:theme="@style/Theme.MaraFresh.NoActionBar" />
+        <activity
+            android:name=".MyProfile"
+            android:exported="false"
+            android:label="@string/title_activity_my_profile"
+            android:theme="@style/Theme.MaraFresh.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MaraFresh.NoActionBar" />
+        <activity
+            android:name=".UserCheckOutActivity"
+            android:exported="false"
+            android:label="@string/title_activity_user_check_out"
+            android:theme="@style/Theme.MaraFresh.NoActionBar" />
+        <activity
+            android:name=".ProductDetailActivity"
+            android:exported="false"
+            android:label="Product Details"
+            android:theme="@style/Theme.MaraFresh.NoActionBar" />
+        <activity
+            android:name=".ShoppingActivity"
+            android:exported="false"
+            android:label="@string/title_activity_shopping"
+            android:theme="@style/Theme.MaraFresh.NoActionBar" />
+        <activity
+            android:name=".CartActivity"
+            android:exported="false"
+            android:label="@string/title_activity_cart"
+            android:theme="@style/Theme.MaraFresh.NoActionBar" />
+        <activity
+            android:name=".NumberVerification"
+            android:exported="false"
+            android:label="@string/title_activity_number_verification"
+            android:theme="@style/Theme.MaraFresh.NoActionBar" />
+        <activity
+            android:name=".OtpVerification"
+            android:exported="false"
+            android:label="@string/title_activity_otp_verification"
+            android:theme="@style/Theme.MaraFresh.NoActionBar" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MaraFresh.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

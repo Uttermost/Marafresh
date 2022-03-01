@@ -1,0 +1,2 @@
+rootProject.name = "Mara Fresh"
+include ':app'

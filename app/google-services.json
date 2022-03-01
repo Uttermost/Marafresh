@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "456660920191",
+    "project_id": "mara-fresh",
+    "storage_bucket": "mara-fresh.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456660920191:android:eb20a8d475c45be890dc4a",
+        "android_client_info": {
+          "package_name": "com.app.marafresh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456660920191-m6f3ecmikmc105cuktqtfcu6s07vp8j3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBg2z8KtT1uC1doHAVAOLOfCce0vGdQotA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456660920191-m6f3ecmikmc105cuktqtfcu6s07vp8j3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

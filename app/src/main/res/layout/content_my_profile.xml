@@ -1,0 +1,137 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:fillViewport="false">
+
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:padding="10dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                style="@style/TextBlack"
+                android:fontFamily="@font/product_sans_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Name"
+               />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="30dp">
+
+                <EditText
+                    android:hint="Displayname"
+                    android:id="@+id/Displayname"
+                    android:layout_width="match_parent"
+                    android:padding="16dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:maxLines="1"
+                    android:background="@drawable/bt_shape"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.1"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+
+                    />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="30dp">
+                <TextView
+                    style="@style/TextBlack"
+                    android:fontFamily="@font/product_sans_regular"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Name"
+                    />
+
+                <EditText
+                    android:hint="Email"
+                    android:id="@+id/emailaddess"
+                    android:layout_width="match_parent"
+                    android:fontFamily="@font/product_sans_regular"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:background="@drawable/bt_shape"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    android:letterSpacing="0.1"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:padding="16dp"
+
+                    />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    style="@style/TextBlack"
+                    android:fontFamily="@font/product_sans_regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="phonenumber"
+                    />
+
+                <EditText
+                    android:hint="phonenumber"
+                    android:id="@+id/phonenumber"
+                    android:layout_width="match_parent"
+                    android:padding="16dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:background="@drawable/bt_shape"
+                    android:textSize="12dp"
+
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.1"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+
+                    />
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</ScrollView>
+

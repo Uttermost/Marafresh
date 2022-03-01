@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@+id/scrollbar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:src="@drawable/login_back"
+    android:scrollbars="none"
+
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <ImageView
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            android:id="@+id/imageView"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="70dp"
+            android:contentDescription="TODO"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/login_back"/>
+
+        <TextView
+
+            android:id="@+id/PhoneVerification"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:text="Verify my number"
+            android:fontFamily="@font/product_sans_regular"
+
+            android:textColor="@color/black"
+
+            android:textSize="30sp"
+            android:textStyle="bold"
+
+
+            />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:fontFamily="@font/product_sans_regular"
+            android:gravity="center"
+            android:text="Enter the OPT sent to +251 720 500 600 "
+
+            android:textColor="@color/black"
+
+            android:textSize="14sp"
+
+            />
+
+        <com.chaos.view.PinView
+            android:id="@+id/pinview"
+            style="@style/PinWidget.PinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:hint="Hint."
+            android:inputType="text"
+
+            android:padding="50dp"
+            android:textColor="#1E1E40"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cursorColor="@color/black"
+            android:layout_gravity="center"
+            app:cursorWidth="2dp"
+            app:hideLineWhenFilled="false"
+            app:itemCount="6"
+            app:itemHeight="48dp"
+            app:itemRadius="4dp"
+            app:itemSpacing="0dp"
+            app:itemWidth="48dp"
+            app:lineColor="@color/black"
+            app:lineWidth="2dp"
+            app:viewType="rectangle" />
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/HaventReceived"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center"
+                android:fontFamily="@font/product_sans_regular"
+                android:text=""
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_margin="7dp"
+                android:padding="16dp"
+                />
+        </LinearLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_marginTop="@dimen/space20"
+            android:id="@+id/btnVerify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/btn"
+            android:fontFamily="@font/product_sans_regular"
+            app:strokeWidth="2dp"
+            app:cornerRadius="10dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            android:textColor="@color/white"
+            android:text="Verify and Proceed"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:backgroundTint="@color/teal_700"
+            />
+
+    </LinearLayout>
+</ScrollView>

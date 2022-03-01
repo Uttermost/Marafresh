@@ -1,0 +1,32 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="space5">5dp</dimen>
+    <dimen name="space10">10sp</dimen>
+    <dimen name="space14">14sp</dimen>
+    <dimen name="space24">24dp</dimen>
+    <dimen name="space15">15dp</dimen>
+    <dimen name="space20">20dp</dimen>
+    <dimen name="space30">30dp</dimen>
+    <dimen name="space40">40dp</dimen>
+    <dimen name="space44">44dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="headerTextSize">28sp</dimen>
+
+    <dimen name="view_width_small">1dp</dimen>
+    <dimen name="album_cover_height">160dp</dimen>
+    <dimen name="album_title_padding">10dp</dimen>
+    <dimen name="album_title">15dp</dimen>
+    <dimen name="songs_count_padding_bottom">5dp</dimen>
+
+    <dimen name="card_margin">5dp</dimen>
+    <dimen name="card_album_radius">0dp</dimen>
+    <dimen name="songs_count">12dp</dimen>
+    <dimen name="detail_spacing">15dp</dimen>
+    <dimen name="detail_spacing_more">40dp</dimen>
+</resources>

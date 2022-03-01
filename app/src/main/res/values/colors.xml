@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#009688</color>
+    <color name="purple_700">#009688</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gen_white">#FFFFFFFF</color>
+    <color name="red_300">#E57373</color>
+    <color name="red_400">#EF5350</color>
+    <color name="colorPink">#EC407A</color>
+    <color name="colorOrange">#FF9800</color>
+    <color name="colorGreen">#009688</color>
+    <color name="green_light">#009688</color>
+    <color name="grey_light">#E0E0E0</color>
+    <color name="grey600">#757575</color>
+    <color name="colorRed">#E64A19</color>
+    <color name="colorLightGrey">#EDEDED</color>
+    <color name="medium_green_200">#ebf1ed</color>
+    <color name="medium_green_300">#e4ede7</color>
+    <color name="medium_green_400">#dee8e2</color>
+    <color name="medium_green_500">#d9e4dd</color>
+    <color name="medium_green_600">#c0cbc4</color>
+    <color name="medium_green_700">#a7b0aa</color>
+    <color name="medium_green_800">#8e948f</color>
+    <color name="medium_green_900">#626763</color>
+
+    <color name="lightGrey">#ededed</color>
+    <color name="grey">#d3d3d3</color>
+    <color name="darkGrey">#a8a8a8</color>
+    <color name="lightGreen">#99cc99</color>
+    <color name="green">#00cd00</color>
+    <color name="darkGreen">#008000</color>
+    <color name="red">#ff0000</color>
+    <color name="darkRed">#e50000</color>
+    <color name="lightRed">#ff7f7f</color>
+    <color name="blue">#1464F4</color>
+
+    <color name="statusBarColor">#FFA500</color>
+    <color name="toolbarColor">#ffc736</color>
+    <color name="textColor">#53004e</color>
+    <color name="lightTextColor"></color>
+    <color name="lightBackgroundColor"></color>
+    <color name="backgroundColor">#FDFBF2</color>
+
+    <color name="backgroundColorMain">#FFF222</color>
+
+    <color name="light">#E4E4E4</color>
+
+
+    <color name="pending">#FFA726</color>
+    <color name="allotted">#2196F3</color>
+    <color name="glide_slider_background_color">#000000</color>
+
+    <color name="pending_light">#09FFA726</color>
+    <color name="rejected_light">#09EF5350</color>
+    <color name="delivered_light">#0966BB6A</color>
+    <color name="allotted_light">#092196F3</color>
+
+    <color name="dialog_base">#CA000000</color>
+    <color name="light_gray">#88757575</color>
+    <color name="gray">#383838</color>
+
+    <color name="glo_green">#4FC406</color>
+
+
+    <color name="processDialogPart1">#5E515151</color>
+    <color name="processDialogPart2">#5E515151</color>
+    <color name="processDialogPart3">#5E515151</color>
+    <color name="processDialogPart4">#5E515151</color>
+    <color name="processDialogPart5">#5E515151</color>
+    <color name="processDialogPart6">#5E515151</color>
+    <color name="processDialogPart7">#5E515151</color>
+    <color name="processDialogPart8">#5E515151</color>
+    <color name="processDialogMover">@color/theme</color>
+    <color name="yellow">@color/theme</color>
+    <color name="theme">#902A19</color>
+    <!--    <color name="theme">#8F1804</color>-->
+
+    <color name="yellow_2">#FEBE14</color>
+    <color name="transparent">#00000000</color>
+    <color name="semi_transparent">#D5000000</color>
+    <color name="low_transparent">#E0FFFFFF</color>
+    <color name="light_yellow">#FDD835</color>
+    <color name="light_graay">#767676</color>
+    <color name="input_gray">#9E9E9E</color>
+    <color name="light_grey">#EEEEEE</color>
+    <color name="gray6">#F6F6F6</color>
+
+</resources>
