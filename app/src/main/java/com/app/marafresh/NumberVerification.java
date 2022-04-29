@@ -100,15 +100,15 @@ public class NumberVerification extends AppCompatActivity {
                         //show user email in toast
                         //Toast.makeText(NumberVerification.this, ""+user.getPhoneNumber(), Toast.LENGTH_SHORT).show();
                         //go to profile activity after logged in
-                       // startActivity(new Intent(NumberVerification.this,MainActivity.class));
+                        startActivity(new Intent(NumberVerification.this,CreateProfile.class));
                        // finish();
-                        SendToHomeActivity();
+                        //SendToHomeActivity();
                     }else {
                        // Toast.makeText(NumberVerification.this, ""+user.getPhoneNumber(), Toast.LENGTH_SHORT).show();
                         //go to profile activity after logged in
-                        //startActivity(new Intent(NumberVerification.this,MainActivity.class));
+                        startActivity(new Intent(NumberVerification.this,MainActivity.class));
                        // finish();
-                        SendToHomeActivity();
+                       // SendToHomeActivity();
 
                     }
                 }else{

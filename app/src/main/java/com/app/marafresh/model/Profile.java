@@ -80,8 +80,18 @@ public class Profile implements Serializable {
     private String Timestamp;
     private String Firekey;
 
+    public String getLastName() {
+        return LastName;
+    }
+
+    public void setLastName(String lastName) {
+        LastName = lastName;
+    }
+
+    private String LastName;
+
     public Profile(String email,
-                  String FullName, String PhoneNumber,
+                  String FullName,String LastName, String PhoneNumber,
                    String uid,
                    String key, String Image, String Timestamp, String Firekey){
 
@@ -89,6 +99,7 @@ public class Profile implements Serializable {
 
         this.FullName=FullName;
         this.PhoneNumber=PhoneNumber;
+        this.LastName=LastName;
         this.uid=uid;
         this.key=key;
         this.Image=Image;

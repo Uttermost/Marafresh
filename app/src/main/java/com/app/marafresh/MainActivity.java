@@ -9,9 +9,12 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import android.view.KeyEvent;
+import android.view.Menu;
 import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,11 +25,13 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
 import com.app.marafresh.Adapter.CartAdapter;
 import com.app.marafresh.model.Cart;
+import com.app.marafresh.model.Profile;
 import com.bumptech.glide.request.RequestOptions;
 import com.glide.slider.library.SliderLayout;
 import com.glide.slider.library.animations.DescriptionAnimation;
@@ -49,50 +54,26 @@ import java.util.List;
 import java.util.Map;
 
 
-public class MainActivity extends AppCompatActivity implements  BaseSliderView.OnSliderClickListener,
-        ViewPagerEx.OnPageChangeListener
+public class MainActivity extends AppCompatActivity
 {
 
-    private ProgressBar progressBar;
-
-
-    private FirebaseAuth firebaseAuth;
+    private RelativeLayout topArea;
+    private TextView myDashboard;
+    private TextView myName;
+    private TextView TodaysPrompt;
+    private CardView Fruit;
+    private CardView vegetables;
+    private CardView meat;
+    private CardView Cereals;
     private DatabaseReference mDatabase;
     private FirebaseAuth auth;
     private FirebaseAuth.AuthStateListener authListener;
+    Profile reportSingle;
 
-
-
-
-    private List<Cart> foodList = new ArrayList<>();
-    private List<Cart>ordersList= new ArrayList<>();
-
-
-
-    ProgressDialog pDialog;
-
-    SharedPreferences Msosiprefferences;
-
-    protected String Strl_PaybillNumber;
-
-    private RecyclerView recyclerView;
-    private CartAdapter adapter;
-    Cart notificationItem;
-    ArrayList< Cart> allReports;
-    private NotificationManager mNotificationManager;
-    private int notificationID = 100;
-    private int numMessages = 0;
-    private LinearLayoutManager llm;
-
-    String path;
-    private SliderLayout mDemoSlider;
-    //EditText search_bar;
-    AutoCompleteTextView ACTV;
-    TextView view_all;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_main);
+        setContentView(R.layout.activity_main);
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
 
@@ -105,12 +86,18 @@ public class MainActivity extends AppCompatActivity implements  BaseSliderView.O
         //ab.setDisplayHomeAsUpEnabled(true);
 
 
-
+        setTitle(R.id.inc_toolbar,R.id.iv_title, "Awash", R.drawable.ic_baseline_home_24, R.color.white, R.color.black);
 
         auth = FirebaseAuth.getInstance();
 
 
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (mDatabase == null) {
+            mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        }
+
 
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -121,12 +108,79 @@ public class MainActivity extends AppCompatActivity implements  BaseSliderView.O
                     // launch login activity
 
                     //getCashInHand();
-                    startActivity(new Intent(MainActivity.this, OtpVerification.class));
+                    startActivity(new Intent(MainActivity.this, EmailSignUp.class));
                     finish();
+                }else{
+                    String uid = mDatabase.child("UserProfile").push().getKey();
+//
+                    System.out.println("uid: " + uid.toString());
+
+                    String key = auth.getCurrentUser().getEmail().toString();
+                    //String key = mDatabase.push().getKey();
+                    System.out.println("key_email:" + key.toString());
+
+                    Query queryReftwo = mDatabase.child("UserProfile").orderByChild("phonenumber").
+                            equalTo(key);
+                    queryReftwo.addChildEventListener(new ChildEventListener() {
+                        @Override
+                        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                            Map<String, Object> newPost = (Map<String, Object>) dataSnapshot.getValue();
+                            if (newPost != null) {
+
+                                reportSingle=new Profile(
+                                        newPost.get("email").toString(),
+                                        newPost.get("Displayname").toString(),
+                                        newPost.get("LastName").toString(),
+                                        newPost.get("phonenumber").toString(),
+                                        newPost.get("uid").toString(),
+                                        newPost.get("key").toString(),
+                                        newPost.get("Image").toString(),
+                                        newPost.get("timestamp").toString(),
+
+                                        dataSnapshot.getKey().toString());
+
+                            }
+                            topArea = (RelativeLayout) findViewById(R.id.topArea);
+                            myDashboard = (TextView) findViewById(R.id.myDashboard);
+                            myName = (TextView) findViewById(R.id.myName);
+                            TodaysPrompt = (TextView) findViewById(R.id.TodaysPrompt);
+                            myName.setText(reportSingle.getFullName());
+                            TodaysPrompt.setText(auth.getCurrentUser().getEmail());
+
+
+
+
+
+
+                        }
+
+                        @Override
+                        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                        }
+
+                        @Override
+                        public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                        }
+
+                        @Override
+                        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+
+
+                    });
+
+
+
+
                 }
-
-
-
             }
         };
 
@@ -137,59 +191,50 @@ public class MainActivity extends AppCompatActivity implements  BaseSliderView.O
 
 
 
-        // CreatCart();
-        filldata();
 
 
-
-        recyclerView = (RecyclerView) findViewById(R.id.product_recycler);
-        view_all= (TextView) findViewById(R.id.view_all);
-        view_all.setOnClickListener(new View.OnClickListener() {
+        Fruit = (CardView) findViewById(R.id.Fruit);
+        Fruit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), ShoppingActivity.class);
-                startActivity(i);
+
+                Intent xbrew = new Intent(getApplicationContext(),Fruits.class);
+
+                xbrew.putExtra("category","fruits");
+                startActivity(xbrew);
+
             }
         });
-        recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 1));
-        mDemoSlider = findViewById(R.id.slider);
-        ArrayList<String> listUrl = new ArrayList<>();
-        ArrayList<String> listName = new ArrayList<>();
+        vegetables = (CardView) findViewById(R.id.vegetables);
+        vegetables.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent xbrew = new Intent(getApplicationContext(),vegetablesCategories.class);
 
-        listUrl.add("https://firebasestorage.googleapis.com/v0/b/mara-fresh.appspot.com/o/fruits-g59090e25f_640.jpg?alt=media&token=277861ad-ce24-48f4-a74a-9cc7faf817ac");
-        listName.add("Fruits");
+                xbrew.putExtra("category","vegs");
+                startActivity(xbrew);
+            }
+        });
+        meat = (CardView) findViewById(R.id.meat);
+        meat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent xbrew = new Intent(getApplicationContext(), MeatCategories.class);
 
-        listUrl.add("https://firebasestorage.googleapis.com/v0/b/mara-fresh.appspot.com/o/vegetables-g849a92e16_640.jpg?alt=media&token=135b57df-543a-402b-8d79-53f8e8d59471");
-        listName.add("Vegetables");
+                xbrew.putExtra("category","meat");
+                startActivity(xbrew);
+            }
+        });
+        Cereals = (CardView) findViewById(R.id.Cereals);
+        Cereals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent xbrew = new Intent(getApplicationContext(), Cereals.class);
 
-        listUrl.add("https://firebasestorage.googleapis.com/v0/b/mara-fresh.appspot.com/o/flesh-geba22575f_640.jpg?alt=media&token=b7b0e451-7da5-4cd7-96a1-f1f849733407f");
-        listName.add("Meat");
-
-       
-
-        RequestOptions requestOptions = new RequestOptions();
-        requestOptions.centerCrop();
-        //.diskCacheStrategy(DiskCacheStrategy.NONE)
-        //.placeholder(R.drawable.placeholder)
-        //.error(R.drawable.placeholder);
-
-        for (int i = 0; i < listUrl.size(); i++) {
-            TextSliderView sliderView = new TextSliderView(this);
-            // if you want show image only / without description text use DefaultSliderView instead
-
-            // initialize SliderLayout
-            sliderView
-                    .image(listUrl.get(i))
-                    .description(listName.get(i))
-                    .setRequestOption(requestOptions)
-                    .setProgressBarVisible(true)
-                    .setOnSliderClickListener(this);
-
-            //add your extra information
-            sliderView.bundle(new Bundle());
-            sliderView.getBundle().putString("extra", listName.get(i));
-            mDemoSlider.addSlider(sliderView);
-        }
+                xbrew.putExtra("category","meat");
+                startActivity(xbrew);
+            }
+        });
         BottomNavigationView bnve = (BottomNavigationView)
                 findViewById(R.id.bnve);
 
@@ -238,196 +283,12 @@ public class MainActivity extends AppCompatActivity implements  BaseSliderView.O
                     }
                 });
 
-        // set Slider Transition Animation
-        // mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Default);
-        mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
-
-        mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
-        mDemoSlider.setCustomAnimation(new DescriptionAnimation());
-        mDemoSlider.setDuration(4000);
-        mDemoSlider.addOnPageChangeListener(this);
-        mDemoSlider.stopCyclingWhenTouch(false);
-        //Nothing special, create database reference.
-        //Nothing special, create database reference.
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-        //Create a new ArrayAdapter with your context and the simple layout for the dropdown menu provided by Android
-        final ArrayAdapter<String> autoComplete = new ArrayAdapter<>(this,R.layout.item_list);
-        //Child the root before all the push() keys are found and add a ValueEventListener()
-
-        database.child("Products").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                //Basically, this says "For each DataSnapshot *Data* in dataSnapshot, do what's inside the method.
-                for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()){
-                    //Get the suggestion by childing the key of the string you want to get.
-                    String suggestion = suggestionSnapshot.child("Title").getValue(String.class);
-                    //Add the retrieved string to the list
-                    autoComplete.add(suggestion);
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-        ACTV= (AutoCompleteTextView)findViewById(R.id.search_bar);
-        ACTV.setAdapter(autoComplete);
-
-        //edtSeach = (EditText)action.getCustomView().findViewById(R.id.edtSearch); //the text editor
-
-        //this is a listener to do a search when the user clicks on search button
-        ACTV.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                    doSearch(v);
-                    return true;
-                }
-                return false;
-            }
-        });
-
-        ACTV.requestFocus();
-
-        //open the keyboard focused in the edtSearch
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.showSoftInput(ACTV, InputMethodManager.SHOW_IMPLICIT);
-
-
-
-        foodList = new ArrayList<Cart>();
-
-
-
-
-
-
-        adapter = new CartAdapter(getApplicationContext(), foodList);
-
-
-
-
-    }
-
-
-    private void filldata() {
-
-
-
-        Query queryReftwo = mDatabase.child("Products");
-
-
-        queryReftwo.keepSynced(true);
-
-        queryReftwo.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot snapshot, String s) {
-
-                System.out.println("snapshot:" + snapshot.toString());
-
-//                 pDialog = new ProgressDialog(ShopperActivity.this);
-//                 pDialog.setMessage("Please wait");
-//                pDialog.setCancelable(false);
-//                pDialog.show();
-
-                Map<String, Object> newPost = (Map<String, Object>) snapshot.getValue();
-
-
-                if (newPost != null) {
-
-                    if (newPost.get("Title") != null & newPost.get("Title") != "") {
-                        foodList.add(new Cart
-
-                                (
-
-                                        newPost.get("Title").toString(),
-                                        newPost.get("vDescription").toString(),
-                                        newPost.get("Price").toString(),
-
-                                        newPost.get("Quantity").toString(),
-                                        newPost.get("Category").toString(),
-
-                                        newPost.get("create_ImagedownloadURL").toString(),
-                                        newPost.get("BusinessName").toString(),
-                                        newPost.get("BusinessEmail").toString(),
-
-                                        newPost.get("Location").toString(),
-                                        newPost.get("Paybill").toString(),
-                                        newPost.get("Telephone").toString(),
-                                        newPost.get("CreateDate").toString(),
-
-
-                                        snapshot.getKey().toString()));
-
-                    }
-
-                } else {
-                    foodList.add(new Cart
-
-                            (
-
-                                    newPost.get("Title").toString(),
-                                    newPost.get("vDescription").toString(),
-                                    newPost.get("Price").toString(),
-
-                                    newPost.get("Quantity").toString(),
-                                    newPost.get("Category").toString(),
-
-                                    newPost.get("create_ImagedownloadURL").toString(),
-                                    newPost.get("BusinessName").toString(),
-                                    newPost.get("BusinessEmail").toString(),
-
-                                    newPost.get("Location").toString(),
-                                    newPost.get("Paybill").toString(),
-                                    newPost.get("Telephone").toString(),
-                                    newPost.get("CreateDate").toString(),
-
-
-                                    snapshot.getKey().toString()));
-
-
-                }
-                recyclerView.setAdapter(adapter);
-                // pDialog.hide();
-            }
-
-
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-
-
-        });
-//        for(int arr=allBrews.size();arr<0;arr--){
-//            allReports.add((allBrews.get(arr)));
-//
-//        }
-
 
 
     }
     @Override
     public boolean onSupportNavigateUp(){
         Intent intent = new Intent();
-        intent.putExtra("PaybillNumber", Strl_PaybillNumber);
         setResult(RESULT_OK, intent);
         finish();
         return true;
@@ -468,147 +329,60 @@ public class MainActivity extends AppCompatActivity implements  BaseSliderView.O
 
     @Override
     public void onStop() {
-        mDemoSlider.stopAutoCycle();
+
         super.onStop();
         if (authListener != null) {
             auth.removeAuthStateListener(authListener);
         }
     }
 
+    public void setTitle(int toolbarId,int titleId, String title, int btnDrawable, int colorBg, int titleColor){
+        Toolbar toolbar = (Toolbar) findViewById(toolbarId);
+        toolbar.setBackgroundResource(colorBg);
+        setSupportActionBar(toolbar);
+        //ImageView pageTitle = (ImageView) toolbar.findViewById(titleId);
+//        pageTitle.setText(title);
+//        pageTitle.setTextColor(getResources().getColor(titleColor));
+        getSupportActionBar().setTitle("MaraFresh");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(btnDrawable);
+    }
 
 
-    private void doSearch(TextView v) {
-        String type=v.getText().toString();
-        Query queryRef =  mDatabase.child("Products").
-                orderByChild("Title").
-                equalTo(type);
-
-
-
-        queryRef.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot snapshot, String s) {
-                Map<String, Object> newPost = (Map<String, Object>) snapshot.getValue();
-                if (newPost != null) {
-                    //allBrews.clear();
-                    //allReports.clear();
-                    foodList.clear();
-                    pDialog = new ProgressDialog(MainActivity.this);
-                    pDialog.setMessage("Fetching data");
-                    pDialog.show();
-
-                    if (newPost.get("Title") != null & newPost.get("Title") != "") {
-                        foodList.add(new Cart(
-
-
-                                newPost.get("Title").toString(),
-                                newPost.get("vDescription").toString(),
-                                newPost.get("Price").toString(),
-
-                                newPost.get("Quantity").toString(),
-                                newPost.get("Category").toString(),
-
-                                newPost.get("create_ImagedownloadURL").toString(),
-                                newPost.get("BusinessName").toString(),
-                                newPost.get("BusinessEmail").toString(),
-
-                                newPost.get("Location").toString(),
-                                newPost.get("Paybill").toString(),
-                                newPost.get("Telephone").toString(),
-                                newPost.get("CreateDate").toString(),
-
-
-                                snapshot.getKey().toString()));
-                    }
-
-                } else {
-                    foodList.add(new Cart(
-
-
-                            newPost.get("Title").toString(),
-                            newPost.get("vDescription").toString(),
-                            newPost.get("Price").toString(),
-
-                            newPost.get("Quantity").toString(),
-                            newPost.get("Category").toString(),
-
-                            newPost.get("create_ImagedownloadURL").toString(),
-                            newPost.get("BusinessName").toString(),
-                            newPost.get("BusinessEmail").toString(),
-
-                            newPost.get("Location").toString(),
-                            newPost.get("Paybill").toString(),
-                            newPost.get("Telephone").toString(),
-                            newPost.get("CreateDate").toString(),
-
-
-                            snapshot.getKey().toString()));
-                }
-
-
-//
-//                    listAllBrews.setAdapter(adapters);
-//                    for(int arr=allBrews.size();arr<0;arr--){
-//                        allReports.add((allBrews.get(arr)));
-//
-//                    }
-                pDialog.hide();
-                recyclerView.setAdapter(adapter);
-
-
-            }
-
-
-
-
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-
-
-        });
-
-
-
-//
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_home, menu);
+        return true;
     }
 
     @Override
-    public void onSliderClick(BaseSliderView slider) {
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
+        //noinspection SimplifiableIfStatement
+
+        if (id == R.id.action_logout) {
+
+            auth.signOut();
+
+            return true;
+        }
+
+
+
+
+
+
+
+        return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-    }
 
-    @Override
-    public void onPageSelected(int position) {
-
-    }
-
-    @Override
-    public void onPageScrollStateChanged(int state) {
-
-    }
 }
 
 

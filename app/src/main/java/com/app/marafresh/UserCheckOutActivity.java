@@ -294,7 +294,7 @@ public class UserCheckOutActivity extends AppCompatActivity implements View.OnCl
                     Toasty.error(UserCheckOutActivity.this, "Enter a valid phone number", Toast.LENGTH_LONG).show();
                     return;
                 }
-                if (TextUtils.isEmpty(FullName.getText().toString()) || FullName.getText().toString().length() < 9) {
+                if (TextUtils.isEmpty(FullName.getText().toString()) || FullName.getText().toString().length() < 2) {
                     Toasty.error(UserCheckOutActivity.this, "Enter full name", Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -423,10 +423,7 @@ public class UserCheckOutActivity extends AppCompatActivity implements View.OnCl
                             SavePayments();
                             StoreData();
                             Update();
-                            Intent simToolKitLaunchIntent = getApplicationContext().getPackageManager().getLaunchIntentForPackage("com.android.stk");
-                            if (simToolKitLaunchIntent != null) {
-                                startActivity(simToolKitLaunchIntent);
-                            }
+
                             mDatabase.child("Cart").child(mCurrentUserId).removeValue();
 
 
@@ -479,11 +476,12 @@ public class UserCheckOutActivity extends AppCompatActivity implements View.OnCl
 
                     reportSingle=new Profile(
                             newPost.get("email").toString(),
-                            newPost.get("FullName").toString(),
+                            newPost.get("Displayname").toString(),
+                            newPost.get("LastName").toString(),
                             newPost.get("phonenumber").toString(),
                             newPost.get("uid").toString(),
                             newPost.get("key").toString(),
-                            newPost.get("image").toString(),
+                            newPost.get("Image").toString(),
                             newPost.get("timestamp").toString(),
 
                             dataSnapshot.getKey().toString());
@@ -699,6 +697,13 @@ public class UserCheckOutActivity extends AppCompatActivity implements View.OnCl
         mDatabase.child("CheckoutData").child(key).setValue(postBrew);
 
         Toast.makeText(getApplicationContext(), "Order Placed Successfully", Toast.LENGTH_LONG).show();
+
+        Intent xbrew = new Intent(getApplicationContext(), PaymentActivity.class);
+
+        xbrew.putExtra("amount",strlamount);
+        xbrew.putExtra("fullname",FullName.getText().toString());
+        xbrew.putExtra("phonenumber",MobileNumber.getText().toString());
+        startActivity(xbrew);
     }
 
 

@@ -1,156 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorRed">
+    android:layout_marginTop="60dp"
 
+    android:orientation="vertical"
+    >
+    <ScrollView
 
-    <AutoCompleteTextView
-        android:id="@+id/search_bar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/input_selector"
-        android:drawableEnd="@drawable/ic_search"
-        android:drawablePadding="10dp"
-        android:hint="Search Product"
-        android:imeOptions="actionSearch"
-        android:inputType="text"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.glide.slider.library.SliderLayout
-        android:id="@+id/slider"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:elevation="5dp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_bar" />
+        android:layout_height="match_parent">
+        <LinearLayout
 
-    <com.glide.slider.library.indicators.PagerIndicator
-        android:id="@+id/custom_indicator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="@+id/slider"
-        app:layout_constraintEnd_toEndOf="@+id/slider"
-        app:layout_constraintStart_toStartOf="@+id/slider"
-        app:layout_constraintTop_toTopOf="@+id/slider"
-        app:layout_constraintVertical_bias="0.77" />
-
-
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@drawable/home_back"
-        android:minHeight="800dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/slider"
-        app:layout_constraintVertical_bias="1.0">
-
-        <TextView
-            android:id="@+id/textView27"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Products"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-        <TextView
-            android:id="@+id/textView"
-            style="@style/TextYellow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:text=""
-
-
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/view_all"
-            style="@style/TextYellow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
-            android:text="View All"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <View
-            android:id="@+id/view"
-            android:layout_width="0dp"
-            android:layout_height="0.5dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
-            android:background="@color/light"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView27"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/product_recycler"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="8dp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view"
-            app:layout_constraintVertical_bias="0.0"
-             />
-
-        <TextView
-            android:id="@+id/total"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone" />
+            android:orientation="vertical">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bnve"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:background="@drawable/navigation_back"
-        app:itemIconSize="24dp"
-        app:itemIconTint="@drawable/menu_select"
-        app:itemTextColor="@drawable/menu_select"
-        app:labelVisibilityMode="selected"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_gravity="bottom"
-        app:elevation="10dp"
-        app:menu="@menu/menu_navigation" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <RelativeLayout
+                android:id="@+id/topArea"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/main_background">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp">
+                    <TextView
+                        android:id="@+id/myDashboard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:text="Welcome"
+                        android:textColor="@android:color/white"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/myName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="-20dp"
+                        android:text="Mefsin"
+                        android:textColor="@android:color/white"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_marginTop="-20dp"
+                        android:id="@+id/TodaysPrompt"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:text="What would you like to do today?"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <GridLayout
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:layout_marginTop="-120dp"
+                android:padding="5dp"
+
+                >
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:layout_marginTop="50dp"
+
+                    tools:context=".MainActivity">
+
+                    <LinearLayout
+                        android:clipToPadding="false"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/Fruit"
+
+                            android:clickable="true"
+                            android:layout_width="160dp"
+                            android:layout_height="190dp"
+                            android:layout_margin="10dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center">
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp"
+                                    android:padding="10dp"
+                                    android:tint="#fff"
+                                    android:src="@drawable/fruit"
+                                    android:background="@drawable/pink"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Fruit"
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="10dp"/>
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/colorLightGrey"
+                                    android:layout_margin="10dp"/>
+                                <TextView
+                                    android:gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Fruits"
+                                    android:padding="5dp"/>
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/vegetables"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:layout_width="160dp"
+                            android:layout_height="190dp"
+                            android:layout_margin="10dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center">
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp"
+                                    android:src="@drawable/vegetables"
+                                    android:padding="10dp"
+                                    android:tint="#fff"
+                                    android:background="@drawable/cercleshape"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Vegetables"
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="10dp"/>
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/colorLightGrey"
+                                    android:layout_margin="10dp"/>
+                                <TextView
+                                    android:gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Vegetables"
+                                    android:padding="5dp"/>
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginBottom="100dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/meat"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:layout_width="160dp"
+                            android:layout_height="190dp"
+                            android:layout_margin="10dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center">
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp"
+                                    android:src="@drawable/meat"
+                                    android:padding="10dp"
+                                    android:tint="#fff"
+                                    android:background="@drawable/green"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Meat"
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="10dp"/>
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/colorLightGrey"
+                                    android:layout_margin="10dp"/>
+                                <TextView
+                                    android:gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Meat"
+                                    android:padding="5dp"/>
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/Cereals"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:layout_width="160dp"
+                            android:layout_height="190dp"
+                            android:layout_margin="10dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center">
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp"
+                                    android:src="@drawable/cereals"
+                                    android:padding="10dp"
+                                    android:tint="#fff"
+                                    android:background="@drawable/pink"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Cereals"
+                                    android:textStyle="bold"
+                                    android:layout_marginTop="10dp"/>
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/colorLightGrey"
+                                    android:layout_margin="10dp"/>
+                                <TextView
+                                    android:gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Cereals"
+                                    android:padding="5dp"/>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+            </GridLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

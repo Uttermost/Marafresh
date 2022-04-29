@@ -125,11 +125,21 @@ public class Cart implements Serializable{
 
     private String Location,Paybill,Telephone;
     private String CreatedAt;
+
+    public String getSubCategory() {
+        return SubCategory;
+    }
+
+    public void setSubCategory(String subCategory) {
+        SubCategory = subCategory;
+    }
+
+    private String SubCategory;
     private String Firekey;
 
 
     public Cart(String Title, String Description, String Price,
-                String Quantity, String Category,
+                String Quantity, String Category,String SubCategory,
                 String Photo, String BusinessName, String BusinessEmail, String Location,
                 String Paybill, String Telephone, String CreatedAt, String Firekey) {
         this.Title = Title;
@@ -139,6 +149,7 @@ public class Cart implements Serializable{
         this.Category = Category;
 
         this.Category = Category;
+        this.SubCategory=SubCategory;
 
         this.Price=Price;
         this.BusinessName=BusinessName;

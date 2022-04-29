@@ -52,7 +52,7 @@ public class CartActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private DatabaseReference mDatabase;
     private FirebaseAuth auth;
-    private FirebaseAuth.AuthStateListener authListener;
+
 
 
     private ArrayList<CartItems> foodList;

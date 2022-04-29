@@ -99,11 +99,12 @@ public class MyProfile extends AppCompatActivity {
 
                     reportSingle = new Profile(
                             newPost.get("email").toString(),
-                            newPost.get("FullName").toString(),
+                            newPost.get("Displayname").toString(),
+                            newPost.get("LastName").toString(),
                             newPost.get("phonenumber").toString(),
                             newPost.get("uid").toString(),
                             newPost.get("key").toString(),
-                            newPost.get("image").toString(),
+                            newPost.get("Image").toString(),
                             newPost.get("timestamp").toString(),
 
                             dataSnapshot.getKey().toString());

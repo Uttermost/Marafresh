@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="60dp"
+
+    android:orientation="vertical"
+    >
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/topArea"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+
+                android:background="@drawable/gradient">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp">
+                    <TextView
+                        android:id="@+id/myDashboard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:text="Dear"
+                        android:textColor="@android:color/white"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/myName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="-20dp"
+                        android:text="Mefsin"
+                        android:textColor="@android:color/white"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_marginTop="-20dp"
+                        android:id="@+id/TodaysPrompt"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:text="Mpesa Payments"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <GridLayout
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:layout_marginTop="-150dp"
+                android:padding="5dp"
+
+                >
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:layout_marginTop="50dp"
+
+                    tools:context=".MainActivity">
+
+                    <LinearLayout
+                        android:clipToPadding="false"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+
+
+                            android:layout_margin="15dp"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:layout_marginTop="50dp"
+                                android:textStyle="bold"
+
+                                android:layout_width="match_parent"
+
+                                android:text="@string/mpesa_text"
+                                android:id="@+id/mpesa_text"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@android:color/holo_red_dark"
+                                android:textColor="@android:color/white"
+                                android:maxWidth="200dp"
+                                android:textSize="15sp"
+                                android:ems="15"/>
+                            <View
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.1dp"
+                                android:background="@color/grey" />
+
+                            <TextView
+
+                                android:layout_marginTop="10dp"
+
+                                android:layout_width="match_parent"
+                                android:id="@+id/mpesa_steps0"
+                                android:text="@string/mpesa_steps0"
+                                android:layout_height="wrap_content"
+                                android:lineSpacingExtra="15dp"
+                                android:maxWidth="200dp"
+                                android:textSize="15sp"
+                                android:ems="15"
+                                />
+                            <View
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.1dp"
+                                android:background="@color/grey" />
+
+                            <TextView
+                                android:id="@+id/mpesa_steps1"
+                                android:layout_marginTop="15dp"
+                                android:layout_width="match_parent"
+                                android:text="@string/mpesa_steps1"
+                                android:layout_height="wrap_content"
+                                android:lineSpacingExtra="15dp"
+                                android:maxWidth="200dp"
+                                android:textSize="15sp"
+                                android:ems="15"/>
+
+                            <View
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.1dp"
+                                android:background="@color/grey" />
+
+                            <TextView
+                                android:id="@+id/mpesa_steps2"
+                                android:layout_marginTop="15dp"
+                                android:layout_width="match_parent"
+                                android:text="@string/mpesa_steps2"
+                                android:layout_height="wrap_content"
+                                android:lineSpacingExtra="15dp"
+                                android:maxWidth="200dp"
+                                android:textSize="15sp"
+                                android:ems="15"/>
+                            <View
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.1dp"
+                                android:background="@color/grey" />
+
+                            <LinearLayout
+                                android:padding="@dimen/space10"
+                                android:background="@drawable/bt_shape"
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:weightSum="2"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:ems="15"
+
+                                        android:lineSpacingExtra="15dp"
+
+                                        android:layout_marginTop="15dp"
+                                        android:layout_width="wrap_content"
+                                        android:text="@string/business_number"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="15sp"
+                                        android:layout_weight="1"
+                                        />
+
+
+                                    <TextView
+                                        android:id="@+id/business_number"
+                                        android:ems="15"
+                                        android:drawableRight="@drawable/ic_baseline_content_copy_24"
+                                        android:lineSpacingExtra="15dp"
+                                        android:layout_weight="1"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_width="wrap_content"
+                                        android:text="75675637"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="15sp"
+                                        />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:weightSum="2"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:ems="15"
+
+                                        android:lineSpacingExtra="15dp"
+
+                                        android:layout_marginTop="15dp"
+                                        android:layout_width="wrap_content"
+                                        android:text="@string/account_number"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="15sp"
+                                        android:backgroundTint="#009688"
+                                        android:layout_weight="1"
+                                        />
+
+
+                                    <TextView
+                                        android:id="@+id/account_number"
+                                        android:ems="15"
+                                        android:drawableRight="@drawable/ic_baseline_content_copy_24"
+                                        android:backgroundTint="#009688"
+                                        android:lineSpacingExtra="15dp"
+                                        android:layout_weight="1"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_width="wrap_content"
+                                        android:text="0729092893"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="15sp"
+                                        />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <View
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.1dp"
+                                android:background="@color/grey" />
+                            <TextView
+                                android:id="@+id/mpesa_steps4"
+                                android:layout_marginTop="15dp"
+                                android:layout_width="match_parent"
+                                android:text="@string/mpesa_steps4"
+                                android:layout_height="wrap_content"
+                                android:lineSpacingExtra="15dp"
+                                android:maxWidth="200dp"
+                                android:textSize="15sp"
+                                android:ems="15"/>
+                            <View
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.1dp"
+                                android:background="@color/grey" />
+
+
+                            <TextView
+                                android:id="@+id/mpesa_steps9"
+                                android:ems="15"
+                                android:maxWidth="200dp"
+                                android:lineSpacingExtra="15dp"
+
+                                android:layout_marginTop="15dp"
+                                android:layout_width="match_parent"
+                                android:text="@string/mpesa_steps9"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                />
+                            <View
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.1dp"
+                                android:background="@color/grey" />
+
+
+
+
+                            <Button
+                                android:layout_margin="7dp"
+                                android:id="@+id/submitBtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorPrimary"
+                                android:padding="18dp"
+                                android:text="Complete"
+                                android:gravity="center"
+                                android:textColor="#fff"
+                                android:letterSpacing="0.1"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginBottom="35dp"
+                                />
+                        </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+
+            </GridLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

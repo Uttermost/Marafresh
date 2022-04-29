@@ -5,7 +5,7 @@
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-
+    <dimen name="logo_w_h">100dp</dimen>
     <dimen name="space5">5dp</dimen>
     <dimen name="space10">10sp</dimen>
     <dimen name="space14">14sp</dimen>
@@ -17,7 +17,9 @@
     <dimen name="space44">44dp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="headerTextSize">28sp</dimen>
-
+    <string name="hint_email">Email</string>
+    <string name="btn_forgot_password">Forgot your password?</string>
+    <string name="lbl_forgot_password">Forgot password?</string>
     <dimen name="view_width_small">1dp</dimen>
     <dimen name="album_cover_height">160dp</dimen>
     <dimen name="album_title_padding">10dp</dimen>
@@ -29,4 +31,5 @@
     <dimen name="songs_count">12dp</dimen>
     <dimen name="detail_spacing">15dp</dimen>
     <dimen name="detail_spacing_more">40dp</dimen>
+
 </resources>

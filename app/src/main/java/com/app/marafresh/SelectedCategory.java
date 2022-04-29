@@ -179,7 +179,7 @@ public class SelectedCategory extends AppCompatActivity {
 
                                         newPost.get("Quantity").toString(),
                                         newPost.get("Category").toString(),
-
+                                        newPost.get("SubCategory").toString(),
                                         newPost.get("create_ImagedownloadURL").toString(),
                                         newPost.get("BusinessName").toString(),
                                         newPost.get("BusinessEmail").toString(),
@@ -203,7 +203,7 @@ public class SelectedCategory extends AppCompatActivity {
 
                                     newPost.get("Quantity").toString(),
                                     newPost.get("Category").toString(),
-
+                                    newPost.get("SubCategory").toString(),
                                     newPost.get("create_ImagedownloadURL").toString(),
                                     newPost.get("BusinessName").toString(),
                                     newPost.get("BusinessEmail").toString(),
@@ -279,8 +279,8 @@ public class SelectedCategory extends AppCompatActivity {
             handleMenuSearch();
             return true;
         }
-        if (id == R.id.action_filter) {
-            Intent xbrew = new Intent(getApplicationContext(),Category.class);
+        if (id == R.id.action_cart) {
+            Intent xbrew = new Intent(getApplicationContext(),CartActivity.class);
 
             startActivity(xbrew);
         }
@@ -411,7 +411,7 @@ public class SelectedCategory extends AppCompatActivity {
 
                                 newPost.get("Quantity").toString(),
                                 newPost.get("Category").toString(),
-
+                                newPost.get("SubCategory").toString(),
                                 newPost.get("create_ImagedownloadURL").toString(),
                                 newPost.get("BusinessName").toString(),
                                 newPost.get("BusinessEmail").toString(),
@@ -434,7 +434,7 @@ public class SelectedCategory extends AppCompatActivity {
 
                             newPost.get("Quantity").toString(),
                             newPost.get("Category").toString(),
-
+                            newPost.get("SubCategory").toString(),
                             newPost.get("create_ImagedownloadURL").toString(),
                             newPost.get("BusinessName").toString(),
                             newPost.get("BusinessEmail").toString(),

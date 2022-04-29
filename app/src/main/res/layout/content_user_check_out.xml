@@ -428,6 +428,7 @@
         <Button
 
             android:maxLines="1"
+            android:visibility="invisible"
             android:text="CopyTillNumber"
             android:id="@+id/btnCopy"
             android:layout_width="match_parent"

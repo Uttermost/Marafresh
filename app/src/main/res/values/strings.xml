@@ -98,4 +98,70 @@
     <string name="title_activity_category">Category</string>
     <string name="title_activity_selected_category">SelectedCategory</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_create_profile">Create Profile</string>
+    <array name="gender">
+
+        <item>--Kindly Select --</item>
+        <item>Male</item>
+        <item>Female</item>
+
+    </array>
+    <string name="title_activity_payment">PaymentActivity</string>
+    <string name="mpesa_text">Mpesa Payments</string>
+    <string name="mpesa_steps0">1:Go to M-PESA on your phone.</string>
+    <string name="mpesa_steps1">2:Select Lipa na Mpesa.</string>
+
+    <string name="mpesa_steps2">3:Enter Paybill.</string>
+
+    <string name="mpesa_steps3">4:Enter The Following Details.</string>
+
+    <string name="mpesa_steps4">5:Amount.</string>
+
+    <string name="business_number">Business Number.</string>
+
+    <string name="account_number">Account Number.</string>
+
+    <string name="amount">Amount.</string>
+
+    <string name="mpesa_steps5">6:Enter your M-PESA PIN.</string>
+
+    <string name="mpesa_steps6">7:You will receive a confirmation SMS from MPESA with a confirmation code.</string>
+
+    <string name="mpesa_steps8">8:After you receive the confirmation SMS,enter your phone number and the confirmation Code below.</string>
+
+
+    <string name="mpesa_steps9">9:Enter your M-Pesa pin.</string>
+
+    <string name="enter_payment_details">Enter Payment Details.</string>
+
+    <string name="mpesa_mobile_number">M-Pesa mobile number:</string>
+
+    <string name="M_Pesa_confirmation_code">M-Pesa Confirmation Code.</string>
+    <string name="title_activity_email_sign_up">EmailSignUp</string>
+    <string name="title_activity_email_login">EmailLogin</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="e_mail">Email</string>
+    <string name="tag">Let\'s join us and \nBuild your relationship with others</string>
+    <string name="swipe_right_for_login">Swipe Right for Login</string>
+    <string name="register">Register</string>
+    <string name="re_type_password">Re-type Password</string>
+    <string name="title_activity_reset_password">Reset Password</string>
+
+    <string name="edit">edit</string>
+    <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
+    <string name="action_sign_in_short">Register</string>
+    <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
+    <string name="auth_failed">Authentication failed, check your email and password or sign up</string>
+    <string name="btn_reset_password">Reset Password</string>
+    <string name="btn_back">Back</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Fullname</string>
+    <string name="title_activity_fruits">Fruits</string>
+    <string name="title_activity_vegetables">Vegetables</string>
+    <string name="title_activity_meat">Meat</string>
+    <string name="title_activity_fruits_categories">FruitsCategories</string>
+    <string name="title_activity_vegetables_categories">vegetablesCategories</string>
+    <string name="title_activity_meat_categories">MeatCategories</string>
+    <string name="title_activity_cereals">Cereals</string>
 </resources>
